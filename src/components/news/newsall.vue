@@ -1,10 +1,9 @@
 <template>
   <div>
-    <router-link to="'/news/newsinfo/' + item.id">
-      <van-card v-for="item in newslist" :key="item.id"
+    <router-link v-for="item in newslist" :key="item.id" :to="'/news/newsinfo/' + item.id">
+      <van-card
         :num="item.click"
         :price="item.add_time | time_format"
-        :desc="item.zhaiyao"
         :title="item.title"
         :thumb="item.img_url"/>
     </router-link>
@@ -24,10 +23,13 @@ export default {
   methods: {
     getnewslist() {
       this.$axios.get("api/getnewslist").then(response => {
-        console.log(response);
+        // console.log(response);
         this.newslist = response.data.message;
       });
-    }
+    },
+    // getnewsid(newsid){
+    //   console.log(newsid)
+    // }
   }
 };
 </script>

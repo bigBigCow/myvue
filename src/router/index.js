@@ -29,14 +29,14 @@ const routes = [
    import(/* webpackChunkName: "mine" */ "../components/mine/mine.vue") 
 },
 {
-  path:'/newsall',
+  path:"/news/newsall",
   component:()=>
     import(/* webpackChunkName: "newsall" */ "../components/news/newsall.vue")
 },
 {
-  path:'/newsinfo:id',
+  path:"/news/newsinfo/:id",  //这个路径一定要和to里面的一样，少个/找了半天
   component:()=>
-    import(/* webpackChunkName: "newsall" */ "../components/news/newsall.vue")
+    import(/* webpackChunkName: "newsinfo" */ "../components/news/newsinfo.vue")
 }
 ];
 

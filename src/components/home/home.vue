@@ -4,7 +4,7 @@
     <van-grid :border="false" :column-num="3">
       
       <van-grid-item>
-        <router-link to="/newsall">
+        <router-link to="/news/newsall">
         <img src="../../assets/menu1.png" alt="">
         <p>新闻资讯</p>
         </router-link>
