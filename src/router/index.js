@@ -37,6 +37,16 @@ const routes = [
   path:"/news/newsinfo/:id",  //这个路径一定要和to里面的一样，少个/找了半天
   component:()=>
     import(/* webpackChunkName: "newsinfo" */ "../components/news/newsinfo.vue")
+},
+{
+path:"/photos/photolist",  //这个路径一定要和to里面的一样，少个/找了半天
+component:()=>
+  import(/* webpackChunkName: "photolist" */ "../components/photos/photolist.vue")
+},
+{
+  path:"/photos/photoDetail/:id",  //这个路径一定要和to里面的一样，少个/找了半天
+  component:()=>
+    import(/* webpackChunkName: "photoDetail" */ "../components/photos/photoDetail.vue")
 }
 ];
 

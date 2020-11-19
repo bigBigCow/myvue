@@ -5,13 +5,15 @@
       
       <van-grid-item>
         <router-link to="/news/newsall">
-        <img src="../../assets/menu1.png" alt="">
-        <p>新闻资讯</p>
+          <img src="../../assets/menu1.png" alt="">
+          <p>新闻资讯</p>
         </router-link>
       </van-grid-item>     
       <van-grid-item>
-        <img src="../../assets/menu2.png" alt="">
-        <p>图片分享</p>
+        <router-link to="/photos/photolist">
+          <img src="../../assets/menu2.png" alt="">
+          <p>图片分享</p>
+        </router-link>
       </van-grid-item>
       <van-grid-item>
         <img src="../../assets/menu3.png" alt="">
