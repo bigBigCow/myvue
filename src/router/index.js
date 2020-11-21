@@ -39,14 +39,24 @@ const routes = [
     import(/* webpackChunkName: "newsinfo" */ "../components/news/newsinfo.vue")
 },
 {
-path:"/photos/photolist",  //这个路径一定要和to里面的一样，少个/找了半天
+path:"/photos/photolist", 
 component:()=>
   import(/* webpackChunkName: "photolist" */ "../components/photos/photolist.vue")
 },
 {
-  path:"/photos/photoDetail/:id",  //这个路径一定要和to里面的一样，少个/找了半天
+  path:"/photos/photoDetail/:id", 
   component:()=>
     import(/* webpackChunkName: "photoDetail" */ "../components/photos/photoDetail.vue")
+},
+{
+  path:"/goods/goodsList", 
+  component:()=>
+    import(/* webpackChunkName: "goodsList" */ "../components/goods/goodsList.vue")
+},
+{
+  path:"/goods/goodsinfo", 
+  component:()=>
+    import(/* webpackChunkName: "goodsinfo" */ "../components/goods/goodsInfo.vue")
 }
 ];
 

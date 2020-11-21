@@ -16,8 +16,10 @@
         </router-link>
       </van-grid-item>
       <van-grid-item>
-        <img src="../../assets/menu3.png" alt="">
-        <p>商品购买</p>
+        <router-link to="/goods/goodsList">
+          <img src="../../assets/menu3.png" alt="">
+          <p>商品购买</p>
+        </router-link>
       </van-grid-item>
       <van-grid-item>
         <img src="../../assets/menu4.png" alt="">

@@ -12,15 +12,18 @@
                 <van-image :src="item.src" @click="picPreview()"/>
             </van-grid-item>
         </van-grid>
+        <comment :commentid="picId" class="comments"></comment>
     </div>
 </template>
 <script>
 import { ImagePreview } from 'vant';
+import comment from "../comment/comment.vue"
 export default {
     data(){
         return {
             picInfo:[],
             pictures:[],
+            picId:0
         }
     },
     created(){
@@ -32,7 +35,9 @@ export default {
             this.$axios.get("api/getimageInfo/" + this.$route.params.id).then(res=>{
                 if(res.status === 200){
                     this.picInfo = res.data.message;
+                    this.picId = this.picInfo[0].id;
                 }
+                // console.log(this.picInfo[0].id)
             })
         },
         getPictures(){
@@ -54,6 +59,9 @@ export default {
             });
         }
     },
+    components:{
+        comment:comment
+    }
 }
 </script>
 <style lang="less" scoped>
@@ -68,5 +76,8 @@ export default {
         margin-left: 15px;
         margin-right: 15px;
     }
+}
+.comments{
+    margin-top: 30px;
 }
 </style>

@@ -30,19 +30,13 @@ export default {
     methods:{
         getcomment(){
             this.$axios.get("api/getcomments/"+this.commentid+"?pageindex="+ this.pageindex).then(response=>{
-                console.log(response);
+                // console.log(this.commentid);
                 this.comments = response.data.message;
             })
         },
         morecomment(){
             this.pageindex++;
             this.getcomment();
-            // this.$axios.get("api/getcomments/"+this.commentid+"?pageindex=" + this.pageindex).then(response=>{
-            //     console.log(response.data.message.length);
-            //     if(response.data.message.length<10){
-            //         this.$refs.more.setAttribute("disabled","disabled")
-            //     }
-            // })
         },
         pushcomment(){
             const pushContent = this.$refs.pushContent.value;
@@ -51,7 +45,7 @@ export default {
                 return
             }
             this.$axios.post(("api/postcomment/"+this.commentid),{content:pushContent},{emulateJSON:true}).then(response=>{
-                console.log(response)
+                // console.log(response)
                 if(response.status === 200){
                     this.$dialog.alert({message: '评论成功'});
                 }
@@ -66,16 +60,12 @@ export default {
 <style lang="less" scoped>
 .content{
     margin-top: 30px;
-    width: 98%;
+    width: 100%;
+    box-sizing: border-box;
 }
 p{
     margin:5px 0 0 5px;
 }
-// p:nth-child(1){
-//     margin-top: 10px;
-//     line-height: 30px;
-//     font-size: 14px;
-// }
 .user{
     display: flex;
     justify-content: space-between;

@@ -74,6 +74,7 @@ export default {
 }
 .photoLi{
     position: relative;
+    height: 400px;
 }
 .zhaiyao{
     position: absolute;
