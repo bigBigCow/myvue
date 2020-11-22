@@ -54,9 +54,19 @@ component:()=>
     import(/* webpackChunkName: "goodsList" */ "../components/goods/goodsList.vue")
 },
 {
-  path:"/goods/goodsinfo", 
+  path:"/goods/goodsinfo/:id", 
   component:()=>
     import(/* webpackChunkName: "goodsinfo" */ "../components/goods/goodsInfo.vue")
+},
+{
+  path:"/goods/goodsDetail/:id", 
+  component:()=>
+    import(/* webpackChunkName: "goodsDetail" */ "../components/goods/goodsDetail.vue")
+},
+{
+  path:"/goods/goodsComment/:id", 
+  component:()=>
+    import(/* webpackChunkName: "goodsComment" */ "../components/goods/goodsComment.vue")
 }
 ];
 

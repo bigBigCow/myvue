@@ -8,11 +8,9 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 import moment from "moment";
 import { Toast } from 'vant';
+
  
 import "vant/lib/index.css";
-// import "../static/mui/css/mui.min.css";
-// import "../static/mui/fonts/mui.ttf";
-// import "../static/css/site.css"
 
 import App from "./App.vue";
 
@@ -51,6 +49,7 @@ Vue.filter("time_format",time=>{
 })
 
 new Vue({
+  el:"#app",
   router,
   store,
   render: h => h(App)
