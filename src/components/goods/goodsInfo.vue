@@ -10,7 +10,7 @@
             </div>
             <p class="count">
                 <span @click="subtractCount()">-</span>
-                <span :v-model="goodsCount">{{goodsCount}}</span>
+                <span>{{goodsCount}}</span>
                 <span @click="addCount()">+</span>
             </p>
             <div>
@@ -30,7 +30,7 @@
 </template>
 <script>
 import swiper from "../swipers/swiper.vue"
-import bus from "../../../static/js/bus.js"
+// import bus from "../../../static/js/bus.js"
 export default {
     data(){
         return{
@@ -83,7 +83,14 @@ export default {
         },
         pushCart(){
             // 用bus组件间传值
-            bus.$emit("giveCounts",this.goodsCount);
+            // let thisGoodsCount = this.goodsCount;
+            // let thisGoodsId = this.$route.params.id;
+            // bus.$emit("giveCounts",{goodsCount:thisGoodsCount,goodsId:thisGoodsId});
+            let someGoods = {goodsCount:this.goodsCount,goodsId:this.$route.params.id};
+            // 同步保存
+            this.$store.commit("pushGoods",someGoods);
+            // 异步保存
+            // this.$store.dispatch("asyncPushGoods",someGoods);
         }
     },
     components:{

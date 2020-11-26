@@ -60,7 +60,7 @@
 }
 </style>
 <script>
-import bus from "../static/js/bus";
+// import bus from "../static/js/bus.js";
 export default {
   data(){
     return {
@@ -73,6 +73,9 @@ export default {
   created(){
     // console.log(Object.prototype.toString.call(this.$route.path))
     this.ishome();
+    // this.getGoodsCount();
+  },
+  updated(){
     this.getGoodsCount();
   },
   methods:{
@@ -93,10 +96,11 @@ export default {
       }
     },
     getGoodsCount(){
-      bus.$on("giveCounts",val=>{
-        console.log(val);
-        this.cartCount += val;
-      })
+    //   bus.$on("giveCounts",function(val){
+    //     this.cartCount += val.goodsCount;
+    //     // console.log(val)
+    //   }.bind(this))
+       this.cartCount = this.$store.getters.getTotalCount;
     }
   },
   watch:{
